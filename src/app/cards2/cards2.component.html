@@ -1,0 +1,240 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="cards2.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+
+<div class="container-block">
+
+  
+  <div class="search-container" style="margin: 2rem;">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search for restaurants..." class="search-input">
+  </div>
+
+  
+  <div class="row" style="margin-left:4rem">
+    <h3>Filtered Restaurants</h3>
+    <div *ngIf="filteredRestaurants.filteredRestaurants.length === 0">No restaurants found</div>
+    <div *ngFor="let restaurant of filteredRestaurants.filteredRestaurants" class="col-md-2 mb-4 ps-4">
+      <div class="card p-2" style="width: 18rem;">
+        <img [src]="restaurant.image" class="card-img-top" [alt]="restaurant.name">
+        <div class="card-img-overlay">{{ restaurant.overText }}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ restaurant.name }}</h5>
+          <span class="card-text"><i class="fa-solid fa-star"></i>{{ restaurant.star }}</span>
+          <p class="card-text"><i class="fa-solid fa-location-pin"></i>{{ restaurant.time }}</p>
+          <p class="card-text">{{ restaurant.description }}</p>
+        </div>
+        <div class="card-body">
+          <a [href]="restaurant.links.cart" class="card-link">Add To Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="container-fluid mt-5" style="cursor:pointer">
+    <h2 class="text-center mb-4">Best Places to Eat Across Cities</h2>
+    <div class="row text-center" style="margin-left:10rem">
+      <div *ngIf="filteredRestaurants.filteredCities.length === 0">No cities found</div>
+      <div class="col-lg-2 col-md-6 col-sm-12 mb-4 mx-2 p-3 border" *ngFor="let city of filteredRestaurants.filteredCities">
+        <a [href]="city.link" target="_blank" style="text-decoration: none">{{ city.city }}</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container-fluid mt-5" style="cursor:pointer">
+    <h2 class="text-center mb-4">Best Cuisines Near Me</h2>
+    <div class="row text-center" style="margin-left:10rem">
+      <div *ngIf="filteredRestaurants.filteredCuisines.length === 0">No cuisines found</div>
+      <div class="col-lg-2 col-md-6 col-sm-12 mb-4 mx-2 p-3 border" *ngFor="let cuisine of filteredRestaurants.filteredCuisines">
+        <a [href]="cuisine.link" target="_blank" style="text-decoration: none">{{ cuisine.cuisine }}</a>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container-fluid mt-5" style="cursor:pointer">
+    <h2 class="text-center mb-4">Explore Restaurants Near Me</h2>
+    <div class="row text-center" style="margin-left:10rem">
+      <div *ngIf="filteredRestaurants.filteredExplore.length === 0">No explore sections found</div>
+      <div class="col-lg-2 col-md-6 col-sm-12 mb-4 mx-2 p-3 border" *ngFor="let explore of filteredRestaurants.filteredExplore">
+        <a [href]="explore.link" target="_blank" style="text-decoration: none">{{ explore.explore }}</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="cards2.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+
+<div class="container-block" style="width:1700px; margin-left:80px">
+
+  <div class="search-container" style="margin: 2rem;">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search for restaurants..." class="search-input">
+  </div>
+
+ 
+  <div class="row" style="margin-left:2rem">
+    <h3>Filtered Restaurants</h3>
+    <div *ngIf="filteredRestaurants.filteredRestaurants.length === 0">No restaurants found</div>
+    <div *ngFor="let restaurant of filteredRestaurants.filteredRestaurants" class="col-lg-2 col-md-3 col-sm-6 mb-4 ps-4" style="flex: 0 0 calc(20% - 1rem); margin: 0 0.5rem;">
+      <div class="card p-1" style="width: 18rem;">
+        <img [src]="restaurant.image" class="card-img-top" [alt]="restaurant.name">
+        <div class="card-img-overlay">{{ restaurant.overText }}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ restaurant.name }}</h5>
+          <span class="card-text"><i class="fa-solid fa-star"></i>{{ restaurant.star }}</span>
+          <p class="card-text"><i class="fa-solid fa-location-pin"></i>{{ restaurant.time }}</p>
+          <p class="card-text">{{ restaurant.description }}</p>
+        </div>
+        <div class="card-body">
+          <a [href]="restaurant.links.cart" class="card-link">Add To Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="container-fluid mt-5" style="cursor:pointer">
+    <h2 class="text-center mb-4">Best Places to Eat Across Cities</h2>
+    <div class="row text-center" style="margin-left:10rem">
+      <div *ngIf="filteredRestaurants.filteredCities.length === 0">No cities found</div>
+      <div class="col-lg-2 col-md-3 col-sm-6 mb-4 mx-2 p-3 border" style="flex: 0 0 calc(20% - 1rem); margin: 0 0.5rem;" *ngFor="let city of filteredRestaurants.filteredCities">
+        <a [href]="city.link" target="_blank" style="text-decoration: none">{{ city.city }}</a>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="container-fluid mt-5" style="cursor:pointer">
+    <h2 class="text-center mb-4">Best Cuisines Near Me</h2>
+    <div class="row text-center" style="margin-left:10rem">
+      <div *ngIf="filteredRestaurants.filteredCuisines.length === 0">No cuisines found</div>
+      <div class="col-lg-2 col-md-3 col-sm-6 mb-4 mx-2 p-3 border" style="flex: 0 0 calc(20% - 1rem); margin: 0 0.5rem;" *ngFor="let cuisine of filteredRestaurants.filteredCuisines">
+        <a [href]="cuisine.link" target="_blank" style="text-decoration: none">{{ cuisine.cuisine }}</a>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="container-fluid mt-5" style="cursor:pointer">
+    <h2 class="text-center mb-4">Explore Restaurants Near Me</h2>
+    <div class="row text-center" style="margin-left:10rem">
+      <div *ngIf="filteredRestaurants.filteredExplore.length === 0">No explore sections found</div>
+      <div class="col-lg-2 col-md-3 col-sm-6 mb-4 mx-2 p-3 border" style="flex: 0 0 calc(20% - 1rem); margin: 0 0.5rem;" *ngFor="let explore of filteredRestaurants.filteredExplore">
+        <a [href]="explore.link" target="_blank" style="text-decoration: none">{{ explore.explore }}</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="cards2.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container-block" style="width:1700px; margin-left:80px">
+
+  <!-- Search Bar -->
+  <div class="search-container" style="margin:2.5rem;width:500px;margin-left:39rem">
+    <div class="input-group mb-3">
+      <input type="text" [(ngModel)]="searchTerm" class="form-control search-input" placeholder="Search for restaurants..." aria-label="Search" aria-describedby="button-search">
+      <button class="btn btn-outline-secondary" type="button" id="button-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Display Filtered Restaurants -->
+  <div class="row" style="margin-left:2rem">
+    <h3>Filtered Restaurants</h3>
+    <div *ngIf="filteredRestaurants.filteredRestaurants.length === 0">No restaurants found</div>
+    <div *ngFor="let restaurant of filteredRestaurants.filteredRestaurants" class="col-lg-2 col-md-3 col-sm-6 mb-4 ps-4" style="flex: 0 0 calc(20% - 1rem); margin: 0 0.5rem;">
+      <div class="card p-1" style="width: 18rem;">
+        <img [src]="restaurant.image" class="card-img-top" [alt]="restaurant.name">
+        <div class="card-img-overlay">{{ restaurant.overText }}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ restaurant.name }}</h5>
+          <span class="card-text"><i class="fa-solid fa-star"></i>{{ restaurant.star }}</span>
+          <p class="card-text"><i class="fa-solid fa-location-pin"></i>{{ restaurant.time }}</p>
+          <p class="card-text">{{ restaurant.description }}</p>
+        </div>
+        <div class="card-body">
+          <a [href]="restaurant.links.cart" class="card-link">Add To Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Display Filtered Cities -->
+  <div class="container-fluid mt-5" style="cursor:pointer">
+    <h2 class="text-center mb-4">Best Places to Eat Across Cities</h2>
+    <div class="row text-center" style="margin-left:10rem">
+      <div *ngIf="filteredRestaurants.filteredCities.length === 0"></div>
+      <div class="col-lg-2 col-md-3 col-sm-6 mb-4 mx-2 p-3 border" style="flex: 0 0 calc(20% - 1rem); margin: 0 0.5rem;" *ngFor="let city of filteredRestaurants.filteredCities">
+        <a [href]="city.link" target="_blank" style="text-decoration: none">{{ city.city }}</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Display Filtered Cuisines -->
+  <div class="container-fluid mt-5" style="cursor:pointer">
+    <h2 class="text-center mb-4">Best Cuisines Near Me</h2>
+    <div class="row text-center" style="margin-left:10rem">
+      <div *ngIf="filteredRestaurants.filteredCuisines.length === 0"></div>
+      <div class="col-lg-2 col-md-3 col-sm-6 mb-4 mx-2 p-3 border" style="flex: 0 0 calc(20% - 1rem); margin: 0 0.5rem;" *ngFor="let cuisine of filteredRestaurants.filteredCuisines">
+        <a [href]="cuisine.link" target="_blank" style="text-decoration: none">{{ cuisine.cuisine }}</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Display Explore Sections -->
+  <div class="container-fluid mt-5" style="cursor:pointer">
+    <h2 class="text-center mb-4">Explore Restaurants Near Me</h2>
+    <div class="row text-center" style="margin-left:10rem">
+      <div *ngIf="filteredRestaurants.filteredExplore.length === 0">No explore sections found</div>
+      <div class="col-lg-2 col-md-3 col-sm-6 mb-4 mx-2 p-3 border" style="flex: 0 0 calc(20% - 1rem); margin: 0 0.5rem;" *ngFor="let explore of filteredRestaurants.filteredExplore">
+        <a [href]="explore.link" target="_blank" style="text-decoration: none">{{ explore.explore }}</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+

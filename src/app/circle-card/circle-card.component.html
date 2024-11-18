@@ -1,0 +1,33 @@
+<h3 class="d-flex justify-content-center align-items-center" style="margin-bottom:2rem; margin-top:2rem">What's on your mind?</h3>
+<div class="container position-relative" style="margin-bottom:2rem">
+  <div class="row justify-content-center">
+    
+    <!-- Left Scroll Button -->
+    <button class="btn btn-outline-primary btn-sm position-absolute" style="top: 50%; left: 10px; transform: translateY(-50%);" (click)="scrollLeft()">
+      &#8249;
+    </button>
+
+    <div class="col-12">
+      <div class="d-flex overflow-hidden" #scrollContainer style="scroll-behavior: smooth;">
+        <div class="col-auto" *ngFor="let card of cards">
+          <div class="card card-circle">
+            <!-- Make the image clickable by wrapping it with an anchor tag -->
+            <a [href]="card.link" target="_blank"> <!-- This should be correct -->
+              <img [src]="card.image" alt="{{ card.title }}">
+            </a>
+            <div class="card-body" style="height:200rem;" >
+              <h5 class="card-title">{{ card.title }}</h5>
+              <p class="card-text">{{ card.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Scroll Button -->
+    <button class="btn btn-outline-primary btn-sm position-absolute" style="top: 50%; right: 10px; transform: translateY(-50%);" (click)="scrollRight()">
+      &#8250;
+    </button>
+  
+  </div>
+</div>

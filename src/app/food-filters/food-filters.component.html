@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    
+</head>
+<body>
+  <div class="filter-buttons">
+
+    <button class="btn btn-primary filter-btn" (click)="toggleFilterPanel()">
+        Filters
+        <span *ngIf="appliedFiltersCount > 0" class="badge badge-light mx-1">{{ appliedFiltersCount }}</span>
+      </button>
+
+    <button class="filter-btn" (click)="filterByCategory('veg')">Veg</button>
+    <button class="filter-btn" (click)="filterByCategory('non-veg')">Non-Veg</button>
+    <button class="filter-btn" (click)="filterByPriceRange('under-300')">Under ₹300</button>
+    <button class="filter-btn" (click)="filterByPriceRange('300-400')">₹300-₹400</button>
+    <button class="filter-btn" (click)="filterByStarRating(4)">Star Rating 4+</button>
+  </div>
+
+  <div *ngIf="showFilters" class="filter-panel mt-3">
+    <h4>Filter Options</h4>
+    <!-- Your Detailed Filters Here -->
+    <!-- Add checkboxes or other filter options for detailed settings -->
+  </div>
+</body>
+</html>
+
+
+
+  

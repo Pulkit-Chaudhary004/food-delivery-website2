@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheets" href="signup.component.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+<div class="container mt-[80px]"> <br>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-header text-center">
+            <h4 class="mb-0">Sign Up</h4>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" required />
+              </div>
+    
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" required />
+              </div>
+    
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required />
+              </div>
+    
+              <button type="submit" id="signup" class="btn btn-primary btn-block">Sign Up</button>
+    
+              <div *ngIf="signupError" class="alert alert-danger mt-3">
+                {{ signupError }}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,30 @@
+.container{
+  display:flex;
+  justify-content:center;
+  margin-top:0.5rem;
+}
+.nav-item{
+  margin-left:1rem;
+}
+footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  footer h5 {
+    font-weight: bold;
+  }
+  
+  footer a {
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  footer .bi {
+    margin-right: 8px;
+  }
+  

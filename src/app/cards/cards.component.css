@@ -1,0 +1,37 @@
+.card {
+  width: 100px;
+  height:325px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ /* margin-left:7rem ;  */
+ transform: scale(1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.05); /* Scale up the card slightly */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase the shadow */
+  background-color: #e7e1e1; /* Change the background color */
+}
+.card-img {
+  width: 100px;
+  height: 200px;
+  object-fit:cover;
+  object-position: center;
+}
+
+.card-body {
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+
+  .card-img {
+    height: 150px;
+  }
+}
